@@ -1,3 +1,68 @@
 body {
-    background-color: dodgerblue;
+    font-family: 'Anton', sans-serif;
+}
+#submitButton {
+    border: none;
+    border-radius: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: darkgreen;
+    padding: 8px;
+}
+.deleteButton {
+    border: none;
+    border-radius: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: red;
+    padding: 4px;
+    margin: 4px 0;
+}
+.pageTitle {
+    text-align: center;
+    background-color: #C2C2C2;
+    margin: auto;
+}
+.containerInputs {
+    display: flex;
+    justify-content: space-around;
+}
+#submitButton {
+    margin-top: 15px;
+    float: right;
+}
+.containerTable {
+    margin-top: 35px;
+}
+.containerFooter {
+    text-align: end;
+}
+::placeholder {
+    font-family: 'Montserrat', sans-serif;
+}
+input {
+    border-radius: 0;
+    border: 1px solid #2377A4;
+    width: 18%;
+    height: 19px;
+    font-family: 'Montserrat', sans-serif;
+}
+table {
+    width: 100%;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #2377A4;
+    color: white;
+  }
+
+tr:nth-child(even) {
+    background-color: #93d6ea;
 }

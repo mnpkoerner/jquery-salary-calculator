@@ -4,16 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap.css">
-    <link href="bootstrap.css.map">
+    <!-- <link rel="stylesheet" href="bootstrap.css">
+    <link href="bootstrap.css.map"> -->
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap" rel="stylesheet">
     <script src="jquery-3.5.1.js"></script>
     <script src="client.js"></script>
-    <title>Document</title>
+    <title>Salary Calculator</title>
 </head>
 
 <body>
-    working
+    <header class="containerHeader">
+        <h1 class="pageTitle">Employee Salary Calculator</h1>
+    </header>
+
+    <section class="containerInputSection">
+
+        <h2 class="inputTitle">Add Employee</h2>
+
+        <div class="containerInputs">
+            <input type="text" id="employeeFirstName" placeholder="First Name">
+            <input type="text" id="employeeLastName" placeholder="Last Name">
+            <input type="text" id="employeeID" placeholder="ID">
+            <input type="text" id="employeeTitle" placeholder="Title">
+            <input type="text" id="employeeAnnualSalary" placeholder="Annual Salary">
+        </div>
+
+        <div class="inputSubmit">
+            <button id="submitButton">SUBMIT</button>
+        </div>
+
+    </section>
+
+    <section class="containerTable">
+
+        <h2 class="tableTitle">Employees</h2>
+
+        <table class="employeeTable" id="addEmployeeTable">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Salary</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Mike</th>
+                <td>Rotch</th>
+                <td>2231231</th>
+                <td>AssMan</th>
+                <td>440000</th>
+                <td><button class="deleteButton">DELETE</button></td>
+            </tr>
+            <tr>
+                <td>Heywood</th>
+                <td>Jablome</th>
+                <td>22331</th>
+                <td>Big Bad Wolf</th>
+                <td>44000000</th>
+                <td><button class="deleteButton">DELETE</button></td>
+            </tr>
+        </table>
+    </section>
+    <footer class="containerFooter">
+        <h2 id="footerTitle">Total Monthly Expenses: $<span id="totalMonthlyExpenses">0</span></h2>
+    </footer>
 </body>
 
 </html>
