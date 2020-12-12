@@ -66,3 +66,7 @@ th {
 tr:nth-child(even) {
     background-color: #93d6ea;
 }
+
+.toRed{
+    color: red;
+}

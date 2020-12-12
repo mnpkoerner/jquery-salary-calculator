@@ -1,7 +1,7 @@
 $(document).ready(readyNow)
 function readyNow() {
-    $('#submitButton').on('click', runAndRender)
-    $
+    $('#submitButton').on('click', runAndRender);
+    $('#addEmployeeTable').on('click', '.deleteButton', deleteAndRender)
 }
 let employees = [];
 
@@ -10,7 +10,21 @@ function runAndRender() {
     let newEmployee = addToArray();
     emptyInputs();
     addToTable(newEmployee);
+    calculateMonthlyExpenses(employees);
 }
+
+function deleteAndRender() {
+    let delRow = $(this).parent().parent();
+    deleteFromDom(delRow);
+    //remove from the array
+    //calculate
+}
+
+function deleteFromDom(deleter) {
+    deleter.remove();
+}
+
+
 
 function addToArray() {
     let newEmployee = {
@@ -36,7 +50,7 @@ function emptyInputs() {
 }
 
 function addToTable(employee) {
-    let newRow = $(`<tr class="employeeInTable">
+    let newRow = $(`<tr class="employeeInTable tableRow">
         <td>${employee.firstName}</td>
         <td>${employee.lastName}</td>
         <td>${employee.employeeID}</td>
@@ -45,4 +59,19 @@ function addToTable(employee) {
         <td><button class="deleteButton">DELETE</button></td>
     `);
     $('#addEmployeeTable').append(newRow);
+}
+
+function calculateMonthlyExpenses(employeeArray) {
+    let el = $('#footerTitle');
+    el.empty();
+    let sum = 0;
+    for (employee of employeeArray) {
+        sum += employee.monthlySalary;
+    }
+    if (sum > 20000) {
+        el.append(`<span class="toRed">Total Monthly Expenses: $${Math.round(sum)}</span>`)
+    }
+    else if (sum <= 20000) {
+        el.append(`<span>Total Monthly Expenses: $${Math.round(sum)}</span>`)
+    }
 }
