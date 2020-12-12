@@ -2,7 +2,8 @@ $(document).ready(readyNow)
 function readyNow() {
     $('#submitButton').on('click', runAndRender);
     $('#addEmployeeTable').on('click', '.deleteButton', deleteAndRender)
-}//Huge thanks to Mike Dunn on the dynamic click listener.
+}//Huge thanks to Mike Dunn on the dynamic click listener. I thought I understood how to write one
+//after the color boxes assignment, but he helped troubleshoot this for me when I got stuck
 let employees = [];
 
 
@@ -14,11 +15,11 @@ function runAndRender() {
 }
 
 function deleteAndRender() {
-    let text = $(this).attr('id');
-    //SOMEHOW-->I want to capture the text of the employer id
-    let delRow = $(this).parent().parent();
-    deleteFromDom(delRow);
-    console.log('text:', text)
+    let deleteAtIndex = Number($(this).attr('id'));
+    let rowToDelete = $(this).parent().parent();
+    deleteFromDom(rowToDelete);
+    deleteFromArray(deleteAtIndex);
+    calculateMonthlyExpenses(employees);
     //remove from the array
     //calculate
 }
@@ -27,12 +28,10 @@ function deleteFromDom(deleter) {
     deleter.remove();
 }
 
-function removeFromArray(checker, array) {
-    for (let i = 0; i < array.length; i++) {
-        //if index of checker !== -1, delete item
-    }
+function deleteFromArray(index) {
+    employees.splice(index, 1);
+    addToTable(employees);
 }
-
 
 
 function addToArray() {
