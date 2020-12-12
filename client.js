@@ -50,7 +50,7 @@ function emptyInputs() {
 }
 
 function addToTable(employee) {
-    let newRow = $(`<tr class="employeeInTable tableRow">
+    let newRow = $(`<tr>
         <td>${employee.firstName}</td>
         <td>${employee.lastName}</td>
         <td>${employee.employeeID}</td>
@@ -60,6 +60,8 @@ function addToTable(employee) {
     `);
     $('#addEmployeeTable').append(newRow);
 }
+
+
 
 function calculateMonthlyExpenses(employeeArray) {
     let el = $('#footerTitle');
