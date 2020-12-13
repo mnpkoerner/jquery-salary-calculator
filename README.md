@@ -12,9 +12,16 @@ If you'd like to remove an employee from the table to see how their omission wou
 
 ## SCREEN SHOTS
 
+Page Appearance When Initially Loaded:
 ![Initial appearance](/unpop_screen.png "Initial Appearance")
+
+After Employees Added:
 ![Added Employees](/pop_screen.png "After Employees Added to Table")
+
+Labor Costs Exceed Budget:
 ![Exceeds Monthly Labor Budget](/in_the_red.png "Labor Costs in the Red")
+
+Labor Costs Resolved:
 ![Delete Employee](/back_in_black.png "Employee Removed, Labor Costs Recalculated, Back in the Black")
 
 
