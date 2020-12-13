@@ -6,31 +6,23 @@ function readyNow() {
 //after the color boxes assignment, but he helped troubleshoot this for me when I got stuck
 let employees = [];
 
-
 function runAndRender() {
     let newEmployee = addToArray();
-    emptyInputs();
     addToTable(employees)
     calculateMonthlyExpenses(employees);
+    emptyInputs();
 }
 
 function deleteAndRender() {
     let deleteAtIndex = Number($(this).attr('id'));
-    let rowToDelete = $(this).parent().parent();
-    deleteFromDom(rowToDelete);
     deleteFromArray(deleteAtIndex);
     calculateMonthlyExpenses(employees);
-    //remove from the array
-    //calculate
-}
-
-function deleteFromDom(deleter) {
-    deleter.remove();
 }
 
 function deleteFromArray(index) {
     employees.splice(index, 1);
     addToTable(employees);
+    console.log(employees);
 }
 
 
@@ -53,7 +45,6 @@ function emptyInputs() {
     $('#employeeLastName').val('');
     $('#employeeID').val('');
     $('#employeeTitle').val('');
-    $('#employeeAnnualSalary').val('');
     $('#employeeAnnualSalary').val('');
 }
 
@@ -79,9 +70,7 @@ function addToTable(employees) {
         <td><button class="deleteButton" id="${i}">DELETE</button></td>`)
         $('#addEmployeeTable').append(newRow);
     }
-
 }
-//something is wrong, it deletes the table head
 
 
 function calculateMonthlyExpenses(employeeArray) {
@@ -119,3 +108,16 @@ function calculateMonthlyExpenses(employeeArray) {
 //wasn't populating the DOM with the contents of the array.
 //Big thanks to Chris Emmerfol and Mike Dunn for sharing the idea of populating the DOM with
 //the contents of the array. I implemented their idea in the updated add to table function
+
+
+
+
+// let rowToDelete = $(this).parent().parent();
+// deleteFromDom(rowToDelete);
+//This was originally inside the function deleteAndRender, it took the whole row I wanted off the dom
+
+// function deleteFromDom(deleter) {
+//     deleter.remove();
+// }
+//Once I wrote the functions to remove the elements from the array employees AND repopulate the DOM from the array,
+//This code became redundant
