@@ -6,7 +6,7 @@ body {
     border-radius: 0;
     font-family: 'Montserrat', sans-serif;
     color: white;
-    background-color: darkgreen;
+    background-color: green;
     padding: 8px;
 }
 .deleteButton {
@@ -68,5 +68,6 @@ tr:nth-child(even) {
 }
 
 .toRed{
-    color: red;
+    color: white;
+    background-color: red;
 }
